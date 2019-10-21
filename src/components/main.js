@@ -8,16 +8,22 @@ class Main extends React.Component {
     };
   }
 
-  handleButtonClick = e => {
+  handleButtonClickIncrease = e => {
     e.preventDefault();
     this.setState({ stuff: this.state.stuff + 1 });
+  };
+  
+  handleButtonClickDecrease = e => {
+    e.preventDefault();
+    this.setState({ stuff: this.state.stuff - 1 });
   };
 
   render() {
     return (
       <div>
         <h4>{this.state.stuff}</h4>
-        <button onClick={this.handleButtonClick}>Click Me</button>
+        <button id='decrease' onClick={this.handleButtonClickDecrease}>Decrease</button>
+        <button id='increase' onClick={this.handleButtonClickIncrease}>Increase</button>
       </div>
     );
   }
